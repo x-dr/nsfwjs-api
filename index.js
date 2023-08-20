@@ -4,7 +4,7 @@ import tf from '@tensorflow/tfjs-node';
 import nsfwjs from 'nsfwjs';
 
 
-const MODEL_URL = 'https://github.com/x-dr/nsfw-api/blob/main/models/model.json';
+const MODEL_URL = process.env.MODEL_URL || 'https://nsfwjs.com/model/model.json'
 const app = express();
 app.use(express.json());
 
@@ -70,6 +70,7 @@ app.get("/detector", async (req, res) => {
 		});
 	}
 	try {
+
 		const rating = await processImage(url);
 		rating.url = url;
 		rating.status = 200
@@ -93,6 +94,8 @@ app.get("/detector", async (req, res) => {
 		});
 	}
 });
+
+
 
 app.listen(3000, () => {
 	console.log("Server is ready. listening on http://localhost:3000 .");
