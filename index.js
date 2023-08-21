@@ -113,7 +113,7 @@ app.get("/rating", async (req, res) => {
 		rating.status = 200
 		console.log(rating.Porn + rating.Hentai + rating.Sexy);
 		const rate = rating.Porn + rating.Hentai + rating.Sexy
-		if (rating.Porn > 0.5 || rate > 0.9) {
+		if (rating.Porn > 0.4 || rate > 0.8) {
 			rating.rating = 3;
 		} else if ((rating.Sexy > 1 && rating.Sexy < 0.6 && rating.Porn > 0.1 && rating.Porn < 0.4) || rate > 0.1) {
 			rating.rating = 2;
