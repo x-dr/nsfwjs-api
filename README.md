@@ -57,8 +57,17 @@ npm run start
 http://ip:3035/
 ```
 
+### 2.3. vercel部署
 
-### 2.3. 响应
+[![Deploy with Vercel](https://vercel.com/button?utm_source=busiyi&utm_campaign=oss)](https://vercel.com/new/clone?utm_source=busiyi&utm_campaign=oss&repository-url=https://github.com/x-dr/nsfw-api)
+
+
+### 2.4. heroku部署
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
+## 3. 响应
 
 ```json
 {
