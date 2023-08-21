@@ -4,7 +4,7 @@ import tf from '@tensorflow/tfjs-node';
 import nsfwjs from 'nsfwjs';
 
 
-const MODEL_URL = process.env.MODEL_URL || 'https://file.amavv.com/d/data/nsfwjs/model.json'
+const MODEL_URL = process.env.MODEL_URL || 'https://nsfwjs.com/model/model.json'
 const app = express();
 app.use(express.json());
 
