@@ -61,7 +61,7 @@ http://ip:3035/
 
 > The Serverless Function "index.js" is 111.7mb which exceeds the maximum size limit of 50mb.
 
-~~[![Deploy with Vercel](https://vercel.com/button?utm_source=busiyi&utm_campaign=oss)](https://vercel.com/new/clone?utm_source=busiyi&utm_campaign=oss&repository-url=https://github.com/x-dr/nsfw-api)~~
+
 
 
 ### 2.4. heroku部署
