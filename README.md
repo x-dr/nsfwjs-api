@@ -11,17 +11,17 @@
 1. 下载docker镜像
 
 ```bash
-docker pull gindex/tts-azure:latest
+docker pull gindex/nsfwjs-api:latest
 ```
 
 2. 运行容器
 
 ```bash
 docker run -itd \
-           --name tts \
+           --name nsfwjs \
             -p 3035:3035 \
            --restart=always \
-           gindex/tts-azure:latest
+           gindex/nsfwjs-api:latest
 ```
 
 3. 访问地址
@@ -62,7 +62,7 @@ http://ip:3035/
 
 ```json
 {
-  "Neutral": 0.9852375388145447,  // 无害
+  "Neutral": 0.9852375388145447,  
   "Drawing": 0.007717587053775787,
   "Porn": 0.0043180412612855434,
   "Hentai": 0.002539177890866995,
