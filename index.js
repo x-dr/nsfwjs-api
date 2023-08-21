@@ -4,7 +4,7 @@ import tf from '@tensorflow/tfjs-node';
 import nsfwjs from 'nsfwjs';
 
 
-const MODEL_URL = process.env.MODEL_URL || 'https://nsfwjs.com/model/model.json'
+const MODEL_URL = process.env.MODEL_URL || 'https://file.amavv.com/d/data/nsfwjs/model.json'
 const app = express();
 app.use(express.json());
 
@@ -58,9 +58,46 @@ async function processImage(url) {
 	}
 }
 
+app.get("/", async (req, res) => {
+	const ip = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || req.headers['x-client-ip'] || req.headers['fwd'];
+
+	const html = `
+	  <html>
+		<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<title>nsfwjs-api</title>
+		</head>
+		<body>
+		  <h1>使用方法：</h1>
+		  <p>GET /rating?url=图片地址</p>
+		  <h2>返回值：</h2>
+
+		  <code>
+			{
+			  Drawing: 0.000001,
+			  Hentai: 0.000001,
+			  Neutral: 0.000001,
+			  Porn: 0.000001,
+			  Sexy: 0.000001,
+			  status: 200,
+			  rating: 1,
+			  url: "图片地址"
+			}
+			</code>
+
+		  <p>${ip}</p>
+		</body>
+	  </html>
+	`;
+
+	res.status(200).send(html);
+});
 
 
-app.get("/detector", async (req, res) => {
+
+app.get("/rating", async (req, res) => {
 	const url = req.query.url;
 	if (!url) {
 
@@ -96,7 +133,8 @@ app.get("/detector", async (req, res) => {
 });
 
 
+const port = process.env.PORT || 3035;
 
-app.listen(3000, () => {
-	console.log("Server is ready. listening on http://localhost:3000 .");
+app.listen(port, () => {
+	console.log(`Server is ready. listening on http://localhost:${port} .`);
 });
