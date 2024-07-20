@@ -4,7 +4,7 @@ import tf from '@tensorflow/tfjs-node';
 import nsfwjs from 'nsfwjs';
 
 
-const MODEL_URL = process.env.MODEL_URL || 'https://nsfwjs.com/model/model.json'
+const MODEL_URL = process.env.MODEL_URL || 'https://raw.githubusercontent.com/x-dr/nsfwjs-api/main/models/model.json'
 const app = express();
 app.use(express.json());
 
@@ -108,17 +108,17 @@ app.get("/rating", async (req, res) => {
 	}
 	try {
 
-		const rating = await processImage(url);
+		let rating = await processImage(url);
 		rating.url = url;
 		rating.status = 200
 		console.log(rating.Porn + rating.Hentai + rating.Sexy);
 		const rate = rating.Porn + rating.Hentai + rating.Sexy
 		if (rating.Porn > 0.4 || rate > 0.8) {
-			rating.rating = 3;
+			rating.rating_index = 3;
 		} else if ((rating.Sexy > 1 && rating.Sexy < 0.6 && rating.Porn > 0.1 && rating.Porn < 0.4) || rate > 0.1) {
-			rating.rating = 2;
+			rating.rating_index = 2;
 		} else {
-			rating.rating = 1;
+			rating.rating_index = 1;
 		}
 
 		res.status(200).json(rating);
