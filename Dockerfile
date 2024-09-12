@@ -12,7 +12,7 @@ RUN npm ci --only=production
 # 检测架构并重建 @tensorflow/tfjs-node
 RUN uname -m
 
-RUN if [ "$(uname -m)" = "arm64" ]; then npm rebuild @tensorflow/tfjs-node --build-from-source; fi
+RUN if [ "$(uname -m)" = "aarch64" ]; then npm rebuild @tensorflow/tfjs-node --build-from-source; fi
 
 COPY . .
 
