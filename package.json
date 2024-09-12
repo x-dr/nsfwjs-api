@@ -18,18 +18,18 @@
 	],
 	"author": "x-dr",
 	"license": "MIT",
-	"dependencies": {
-		"@tensorflow/tfjs-node": "^4.21.0",
-		"axios": "^1.7.7",
-		"express": "^4.18.2",
-		"nsfwjs": "^4.1.0",
-		"sharp": "^0.33.5"
-	},
 	"devDependencies": {
 		"nodemon": "^3.0.1"
 	},
 	"bugs": {
 		"url": "https://github.com/x-dr/nsfw-api/issues"
 	},
-	"homepage": "https://github.com/x-dr/nsfw-api#readme"
+	"homepage": "https://github.com/x-dr/nsfw-api#readme",
+	"dependencies": {
+		"@tensorflow/tfjs-node": "^4.21.0",
+		"axios": "^1.7.7",
+		"express": "^4.21.0",
+		"nsfwjs": "^4.1.0",
+		"sharp": "^0.33.5"
+	}
 }
