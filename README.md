@@ -43,6 +43,7 @@ git clone https://github.com/x-dr/nsfw-api.git
 
 ```bash
 npm install
+npm rebuild @tensorflow/tfjs-node --build-from-source
 ```
 
 3. 运行项目
