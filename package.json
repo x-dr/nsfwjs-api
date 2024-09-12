@@ -19,11 +19,11 @@
 	"author": "x-dr",
 	"license": "MIT",
 	"dependencies": {
-		"@tensorflow/tfjs-node": "^4.10.0",
-		"axios": "^1.4.0",
+		"@tensorflow/tfjs-node": "^4.21.0",
+		"axios": "^1.7.7",
 		"express": "^4.18.2",
-		"nsfwjs": "^2.4.2",
-		"sharp": "^0.32.5"
+		"nsfwjs": "^4.1.0",
+		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
 		"nodemon": "^3.0.1"
