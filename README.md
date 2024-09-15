@@ -33,26 +33,52 @@ http://ip:3035/
 
 ### 2.2. 本地部署
 
-1. 下载项目
+1. 安装nodejs(如果已经安装过nodejs则跳过此步骤)
+
+```bash
+
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
+sudo apt update -y
+sudo apt-get install -y nodejs
+```
+2. 安装git (如果已经安装过git则跳过此步骤)
+
+```bash
+sudo apt-get install git
+```
+
+
+3. 下载项目
 
 ```bash
 git clone https://github.com/x-dr/nsfw-api.git
 ```
 
-2. 安装依赖
+4. 安装依赖
 
 ```bash
 npm install
 npm rebuild @tensorflow/tfjs-node --build-from-source
 ```
 
-3. 运行项目
+5. 运行项目
 
 ```bash
 npm run start
 ```
+6. 进程守护
 
-4. 访问地址
+```bash
+npm install -g pm2
+npm start pm2.json
+
+npm stop nsfw-api #暂停
+npm restart nsfw-api #重启
+
+```
+
+
+7. 访问地址
 
 ```bash
 http://ip:3035/

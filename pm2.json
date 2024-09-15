@@ -1,0 +1,17 @@
+{
+    "apps": [
+      {
+        "name": "nsfw-api",
+        "script": "node",
+        "args": "./index.js",
+        "instances": 1,
+        "autorestart": true,
+        "max_restarts": 3,
+        "watch": false,
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "pid_file": "./run.pid",
+        "output": "./log/app.log",
+        "error": "./log/app-error.log"
+      }
+    ]
+  }
